@@ -22,12 +22,17 @@
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
   <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-[70px]">
 
-    <!-- Logo -->
-    <a href="#hero" class="flex items-center gap-2 group">
-      <span class="text-earth-light text-xl font-body tracking-widest">✦</span>
-      <span class="font-display text-white text-[1.3rem] italic tracking-wide leading-none">
-        Thekkan's <span class="not-italic font-semibold">Haven</span>
-      </span>
+    <!-- Logo & Brand -->
+    <a href="#hero" class="flex items-center gap-3 group">
+      <img src="./assets/logo.png" alt="Thekkan's Haven Logo" class="h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+      <div class="flex flex-col justify-center">
+        <span class="font-display text-white text-xl sm:text-[1.35rem] italic tracking-wide leading-none">
+          Thekkan's <span class="not-italic font-semibold">Haven</span>
+        </span>
+        <span class="text-earth-light/90 text-[0.65rem] font-body tracking-[0.15em] uppercase mt-1">
+          A private property homestay
+        </span>
+      </div>
     </a>
 
     <!-- Desktop links -->
@@ -64,11 +69,15 @@
 <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-5 pt-20 pb-16">
   <div class="relative z-10 max-w-3xl mx-auto">
 
-    <p class="leaf-divider mb-4">⸻ &nbsp; Kerala's Hidden Retreat &nbsp; ⸻</p>
+    <p class="leaf-divider mb-4">⸻ &nbsp; A Serene Stay in Nature, Just for You &nbsp; ⸻</p>
 
-    <h1 class="font-display text-white text-5xl sm:text-6xl lg:text-7xl font-semibold italic leading-tight mb-4">
+    <h1 class="font-display text-white text-5xl sm:text-6xl lg:text-7xl font-semibold italic leading-tight mb-2">
       Thekkan's<br><span class="not-italic font-light text-earth-light">Haven</span>
     </h1>
+    
+    <p class="text-earth-light text-xl tracking-[0.2em] font-body uppercase mb-6 opacity-90">
+      Escape. Experience. Enjoy.
+    </p>
 
     <p class="text-white/80 font-body text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-2">
       8 Acres of Privacy · 6 Bedrooms · Private Pool · Spacious Lawn
@@ -197,35 +206,39 @@
       </h2>
     </div>
 
-    <!-- Gallery Grid – replace src URLs with client's real images -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+    <!-- Gallery Native Ratio (Masonry Layout) -->
+    <div class="columns-2 md:columns-3 lg:columns-4 gap-3 sm:gap-4 space-y-3 sm:space-y-4">
 
-      <!-- Large featured image -->
-      <div class="gallery-item col-span-2 row-span-2 rounded-2xl aspect-[4/3] md:aspect-auto" style="height:380px;"
-           onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=800&q=80"
-             alt="Villa exterior" class="w-full h-full object-cover rounded-2xl"/>
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img5.jpeg" alt="Villa exterior" class="w-full h-auto"/>
       </div>
 
-      <div class="gallery-item rounded-2xl overflow-hidden" style="height:182px;" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
-             alt="Swimming pool" class="w-full h-full object-cover"/>
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img1.jpeg" alt="Property view" class="w-full h-auto"/>
       </div>
-      <div class="gallery-item rounded-2xl overflow-hidden" style="height:182px;" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80"
-             alt="Bedroom" class="w-full h-full object-cover"/>
+
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img2.jpeg" alt="Property view" class="w-full h-auto"/>
       </div>
-      <div class="gallery-item rounded-2xl overflow-hidden" style="height:220px;" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80"
-             alt="Lawn" class="w-full h-full object-cover"/>
+
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img3.jpeg" alt="Property view" class="w-full h-auto"/>
       </div>
-      <div class="gallery-item rounded-2xl overflow-hidden" style="height:220px;" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-             alt="Nature view" class="w-full h-full object-cover"/>
+
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img4.jpeg" alt="Property view" class="w-full h-auto"/>
       </div>
-      <div class="gallery-item rounded-2xl overflow-hidden" style="height:220px;" onclick="openLightbox(this)">
-        <img src="https://images.unsplash.com/photo-1567636788276-40a47795ba4d?w=600&q=80"
-             alt="Breakfast" class="w-full h-full object-cover"/>
+
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img6.jpeg" alt="Property view" class="w-full h-auto"/>
+      </div>
+
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img7.jpeg" alt="Property view" class="w-full h-auto"/>
+      </div>
+
+      <div class="gallery-item rounded-2xl overflow-hidden break-inside-avoid" onclick="openLightbox(this)">
+        <img src="./assets/img8.jpeg" alt="Property view" class="w-full h-auto"/>
       </div>
 
     </div>
@@ -445,17 +458,7 @@
           <i class="fas fa-arrow-right ml-auto text-white/30 group-hover:text-white/70 transition text-xs"></i>
         </a>
 
-        <a href="mailto:thekkanshaven@gmail.com"
-           class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition group">
-          <div class="w-11 h-11 bg-earth/30 rounded-full flex items-center justify-center text-earth text-lg flex-shrink-0">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <p class="font-body font-semibold text-white text-sm">Email</p>
-            <p class="text-white/55 text-xs font-body">thekkanshaven@gmail.com</p>
-          </div>
-          <i class="fas fa-arrow-right ml-auto text-white/30 group-hover:text-white/70 transition text-xs"></i>
-        </a>
+
 
         <!-- Social links -->
         <div class="flex gap-3 pt-2">
@@ -484,12 +487,12 @@
         </div>
       </div>
 
-      <!-- Right: email form (Formspree) -->
+      <!-- Right: Contact form (Sends to WhatsApp) -->
       <div class="reveal">
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4" id="contact-form">
+        <form class="space-y-4" id="contact-form">
           <div>
             <label class="block text-white/60 text-xs font-body tracking-wide mb-1.5">Your Name</label>
-            <input type="text" name="name" required placeholder="John Doe" class="form-input"/>
+            <input type="text" name="name" required placeholder="e.g. Rahul Sharma" class="form-input"/>
           </div>
           <div>
             <label class="block text-white/60 text-xs font-body tracking-wide mb-1.5">Phone / WhatsApp</label>
@@ -497,7 +500,7 @@
           </div>
           <div>
             <label class="block text-white/60 text-xs font-body tracking-wide mb-1.5">Email Address</label>
-            <input type="email" name="email" required placeholder="you@example.com" class="form-input"/>
+            <input type="email" name="email" required placeholder="hello@yourmail.com" class="form-input"/>
           </div>
           <div>
             <label class="block text-white/60 text-xs font-body tracking-wide mb-1.5">Preferred Date & Guests</label>

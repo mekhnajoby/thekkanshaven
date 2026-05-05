@@ -59,19 +59,38 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape') window.closeLightbox(); 
 });
 
-/* ── Contact form AJAX (Formspree) ── */
+/* ── Contact form (Send to WhatsApp) ── */
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, { method:'POST', body: data, headers:{ Accept:'application/json' } });
-      if (res.ok) {
-        form.reset();
-        document.getElementById('form-success').classList.remove('hidden');
-      }
-    } catch(err) { console.error(err); }
+    
+    const name = data.get('name') || '';
+    const phone = data.get('phone') || '';
+    const email = data.get('email') || '';
+    const details = data.get('details') || '';
+    const message = data.get('message') || '';
+    
+    let waMessage = `*New Booking Enquiry*\n\n`;
+    waMessage += `*Name:* ${name}\n`;
+    if (phone) waMessage += `*Phone:* ${phone}\n`;
+    if (email) waMessage += `*Email:* ${email}\n`;
+    if (details) waMessage += `*Dates & Guests:* ${details}\n`;
+    if (message) waMessage += `*Message:* ${message}\n`;
+    
+    const encodedMessage = encodeURIComponent(waMessage);
+    
+    // Using placeholder number (user can change this in HTML/JS later or just right here)
+    const waPhone = '919876543210'; 
+    const waUrl = `https://wa.me/${waPhone}?text=${encodedMessage}`;
+    
+    window.open(waUrl, '_blank');
+    
+    form.reset();
+    const successEl = document.getElementById('form-success');
+    successEl.innerText = "✓ Sending to WhatsApp...";
+    successEl.classList.remove('hidden');
   });
 }
 
