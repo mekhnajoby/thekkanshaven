@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #2D4A2D;
+  --color-forest-light: #3D6B3D;
+  --color-forest-dark: #1B2E1B;
+  
+  --color-earth: #C4A882;
+  --color-earth-light: #D8C4A8;
+  --color-earth-dark: #8B7355;
+  
+  --color-cream: #F5F0E8;
+  --color-cream-warm: #EDE4D4;
+  
+  --color-charcoal: #2C2C2C;
+  
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Jost", sans-serif;
+}
+
+/* ─── Base ─── */
+body { font-family: 'Jost', sans-serif; background: #F5F0E8; color: #2C2C2C; }
+h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+
+/* ─── Smooth scroll offset for fixed nav ─── */
+html { scroll-padding-top: 70px; }
+
+/* ─── Navbar ─── */
+#navbar { transition: background .4s, box-shadow .4s; }
+#navbar.scrolled { background: rgba(29,46,29,0.97) !important; box-shadow: 0 2px 20px rgba(0,0,0,.25); }
+
+/* ─── Hero ─── */
+#hero {
+  background: radial-gradient(circle at top, #949a8c 0%, #6d7665 60%, #56644f 100%);
+  position: relative;
+}
+
+/* ─── Section divider ─── */
+.leaf-divider { color: #C4A882; letter-spacing: .4em; font-size: .7rem; text-transform: uppercase; }
+
+/* ─── Gallery grid ─── */
+.gallery-item { overflow: hidden; cursor: zoom-in; }
+.gallery-item img { transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .5s; filter: brightness(.92); }
+.gallery-item:hover img { transform: scale(1.07); filter: brightness(1); }
+
+/* ─── Pricing card glow ─── */
+.price-card { position: relative; overflow: hidden; }
+.price-card::before {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(196,168,130,.12) 0%, transparent 60%);
+  pointer-events:none;
+}
+
+/* ─── Amenity icon ring ─── */
+.amenity-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  border: 1.5px solid #C4A882;
+  display: flex; align-items: center; justify-content: center;
+  color: #2D4A2D;
+  transition: background .3s, color .3s;
+}
+.amenity-icon svg { width: 22px; height: 22px; stroke: #2D4A2D; stroke-width: 1.6; transition: stroke .3s; }
+.amenity-card:hover .amenity-icon { background: #2D4A2D; }
+.amenity-card:hover .amenity-icon svg { stroke: #F5F0E8; }
+
+/* ─── Contact form ─── */
+.form-input {
+  width: 100%; background: rgba(255,255,255,.08);
+  border: 1px solid rgba(196,168,130,.35); color: #F5F0E8;
+  border-radius: .5rem; padding: .75rem 1rem;
+  font-family: 'Jost', sans-serif; font-size: .9rem;
+  transition: border .3s;
+  outline: none;
+}
+.form-input::placeholder { color: rgba(245,240,232,.5); }
+.form-input:focus { border-color: #C4A882; }
+
+/* ─── Highlight icon ring ─── */
+.highlight-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  border: 1.5px solid rgba(196,168,130,.35);
+  background: rgba(196,168,130,.08);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto .9rem;
+  transition: background .3s, border-color .3s;
+}
+.highlight-icon svg { width: 22px; height: 22px; stroke: #2D4A2D; stroke-width: 1.6; transition: stroke .3s; }
+.highlight-card:hover .highlight-icon { background: #2D4A2D; border-color: #2D4A2D; }
+.highlight-card:hover .highlight-icon svg { stroke: #F5F0E8; }
+
+/* ─── Pricing feature icon ─── */
+.pricing-feat-icon { display:inline-flex; align-items:center; justify-content:center; }
+.pricing-feat-icon svg { width:14px; height:14px; stroke:#C4A882; stroke-width:2; flex-shrink:0; }
+
+/* ─── Gallery note icon ─── */
+.gallery-note-icon svg { width:13px; height:13px; display:inline; vertical-align:middle; stroke:currentColor; stroke-width:2; }
+.highlight-card {
+  border: 1px solid rgba(196,168,130,.2);
+  transition: border-color .3s, transform .3s;
+}
+.highlight-card:hover { border-color: #C4A882; transform: translateY(-4px); }
+
+/* ─── Mobile menu ─── */
+#mobile-menu { transition: max-height .35s ease, opacity .35s; max-height:0; opacity:0; overflow:hidden; }
+#mobile-menu.open  { max-height: 400px; opacity:1; }
+
+/* ─── Fade-in on scroll ─── */
+.reveal { opacity:0; transform:translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ─── Lightbox ─── */
+#lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:1100; align-items:center; justify-content:center; }
+#lightbox.open { display:flex; }
+#lightbox img { max-width:90vw; max-height:88vh; border-radius:.5rem; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+
+/* ─── Section headings underline ─── */
+.section-title::after {
+  content:''; display:block; width:50px; height:2px;
+  background: #C4A882; margin: .7rem auto 0;
+}
