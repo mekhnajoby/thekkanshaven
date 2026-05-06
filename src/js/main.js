@@ -82,7 +82,7 @@ if (form) {
     const encodedMessage = encodeURIComponent(waMessage);
     
     // Using placeholder number (user can change this in HTML/JS later or just right here)
-    const waPhone = '919876543210'; 
+    const waPhone = '918943772255'; 
     const waUrl = `https://wa.me/${waPhone}?text=${encodedMessage}`;
     
     window.open(waUrl, '_blank');
