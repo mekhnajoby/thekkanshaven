@@ -1,0 +1,19 @@
+# Disable directory browsing
+Options -Indexes
+
+# Block access to hidden files and directories (like .git, .env)
+RewriteEngine On
+RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+RewriteCond %{SCRIPT_FILENAME} -d [OR]
+RewriteCond %{SCRIPT_FILENAME} -f
+RewriteRule "(^|/)\." - [F]
+
+# Block access to package files
+<FilesMatch "^(package\.json|package-lock\.json|vite\.config\.js|composer\.json|composer\.lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
