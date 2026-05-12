@@ -19,8 +19,53 @@
 }
 
 /* ─── Base ─── */
-body { font-family: 'Jost', sans-serif; background: #F5F0E8; color: #2C2C2C; }
-h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+body { 
+  font-family: 'Jost', sans-serif; 
+  background: #F5F0E8; 
+  color: #2C2C2C;
+  line-height: 1.6;
+}
+h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.02em; }
+
+/* ─── Spacing System (8px Grid) ─── */
+:root {
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+}
+
+/* ─── Cards & Shadows ─── */
+.premium-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: var(--space-4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(45, 74, 45, 0.05);
+}
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(45, 74, 45, 0.08);
+}
+
+/* ─── Trust Badge ─── */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196, 168, 130, 0.1);
+  color: #8B7355;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
 /* ─── Smooth scroll offset for fixed nav ─── */
 html { scroll-padding-top: 70px; }
@@ -31,7 +76,10 @@ html { scroll-padding-top: 70px; }
 
 /* ─── Hero ─── */
 #hero {
-  background: radial-gradient(circle at top, #949a8c 0%, #6d7665 60%, #56644f 100%);
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+              url('https://thekkanshaven.com/assets/private-villa-stay-kerala.jpg');
+  background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -39,7 +87,7 @@ html { scroll-padding-top: 70px; }
 .leaf-divider { color: #C4A882; letter-spacing: .4em; font-size: .7rem; text-transform: uppercase; }
 
 /* ─── Gallery grid ─── */
-.gallery-item { overflow: hidden; cursor: zoom-in; }
+.gallery-item { overflow: hidden; cursor: zoom-in; border-radius: 16px; }
 .gallery-item img { transition: transform .5s cubic-bezier(.25,.46,.45,.94), filter .5s; filter: brightness(.92); }
 .gallery-item:hover img { transform: scale(1.07); filter: brightness(1); }
 
@@ -53,52 +101,24 @@ html { scroll-padding-top: 70px; }
 
 /* ─── Amenity icon ring ─── */
 .amenity-icon {
-  width: 60px; height: 60px; border-radius: 50%;
-  border: 1.5px solid #C4A882;
+  width: 52px; height: 52px; border-radius: 16px;
+  background: rgba(45, 74, 45, 0.05);
   display: flex; align-items: center; justify-content: center;
   color: #2D4A2D;
-  transition: background .3s, color .3s;
+  transition: all 0.3s ease;
 }
-.amenity-icon svg { width: 22px; height: 22px; stroke: #2D4A2D; stroke-width: 1.6; transition: stroke .3s; }
-.amenity-card:hover .amenity-icon { background: #2D4A2D; }
-.amenity-card:hover .amenity-icon svg { stroke: #F5F0E8; }
+.amenity-icon svg { width: 22px; height: 22px; stroke: #2D4A2D; stroke-width: 1.6; }
+.amenity-card:hover .amenity-icon { background: #2D4A2D; color: #fff; transform: rotate(8deg); }
+.amenity-card:hover .amenity-icon svg { stroke: #fff; }
 
-/* ─── Contact form ─── */
-.form-input {
-  width: 100%; background: rgba(255,255,255,.08);
-  border: 1px solid rgba(196,168,130,.35); color: #F5F0E8;
-  border-radius: .5rem; padding: .75rem 1rem;
-  font-family: 'Jost', sans-serif; font-size: .9rem;
-  transition: border .3s;
-  outline: none;
+/* ─── Review Card ─── */
+.review-card {
+  background: #fff;
+  padding: var(--space-4);
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.05);
 }
-.form-input::placeholder { color: rgba(245,240,232,.5); }
-.form-input:focus { border-color: #C4A882; }
-
-/* ─── Highlight icon ring ─── */
-.highlight-icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  border: 1.5px solid rgba(196,168,130,.35);
-  background: rgba(196,168,130,.08);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto .9rem;
-  transition: background .3s, border-color .3s;
-}
-.highlight-icon svg { width: 22px; height: 22px; stroke: #2D4A2D; stroke-width: 1.6; transition: stroke .3s; }
-.highlight-card:hover .highlight-icon { background: #2D4A2D; border-color: #2D4A2D; }
-.highlight-card:hover .highlight-icon svg { stroke: #F5F0E8; }
-
-/* ─── Pricing feature icon ─── */
-.pricing-feat-icon { display:inline-flex; align-items:center; justify-content:center; }
-.pricing-feat-icon svg { width:14px; height:14px; stroke:#C4A882; stroke-width:2; flex-shrink:0; }
-
-/* ─── Gallery note icon ─── */
-.gallery-note-icon svg { width:13px; height:13px; display:inline; vertical-align:middle; stroke:currentColor; stroke-width:2; }
-.highlight-card {
-  border: 1px solid rgba(196,168,130,.2);
-  transition: border-color .3s, transform .3s;
-}
-.highlight-card:hover { border-color: #C4A882; transform: translateY(-4px); }
+.star-rating { color: #F59E0B; display: flex; gap: 2px; }
 
 /* ─── Mobile menu ─── */
 #mobile-menu { transition: max-height .35s ease, opacity .35s; max-height:0; opacity:0; overflow:hidden; }
@@ -115,6 +135,27 @@ html { scroll-padding-top: 70px; }
 
 /* ─── Section headings underline ─── */
 .section-title::after {
-  content:''; display:block; width:50px; height:2px;
-  background: #C4A882; margin: .7rem auto 0;
+  content:''; display:block; width:40px; height:2px;
+  background: #C4A882; margin: .8rem auto 0;
+  border-radius: 2px;
+}
+
+/* ─── Nearby Card ─── */
+.nearby-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 200px;
+}
+.nearby-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.nearby-card:hover img { transform: scale(1.1); }
+.nearby-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-3);
+  color: #fff;
 }
