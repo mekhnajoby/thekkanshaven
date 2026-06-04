@@ -76,10 +76,7 @@ html { scroll-padding-top: 70px; }
 
 /* ─── Hero ─── */
 #hero {
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-              url('https://thekkanshaven.com/assets/private-villa-stay-kerala.jpg');
-  background-size: cover;
-  background-position: center;
+  background: rgb(29, 46, 29);
   position: relative;
 }
 
