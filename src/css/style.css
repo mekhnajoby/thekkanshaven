@@ -178,3 +178,8 @@ html { scroll-padding-top: 70px; }
   padding: var(--space-3);
   color: #fff;
 }
+
+/* ─── Touch hover override for slideshow arrows ─── */
+@media (hover: none) {
+  #prev-slide, #next-slide { display: none !important; }
+}
